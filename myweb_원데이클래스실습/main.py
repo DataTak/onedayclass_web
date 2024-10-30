@@ -43,7 +43,30 @@ import streamlit as st
 # st.subheader(f"가격은 {가격}원 입니다.")
 
 
-# 셀렉트박스 사용
+
+메뉴 = st.sidebar.selectbox("메뉴", ["로그인", "회원가입", "비밀번호 찾기"])
 
 
+if 메뉴 == "로그인":
+    db_id = "test"
+    db_pw = "123"
 
+    st.title("🏀로그인")
+    id=st.text_input("아이디", placeholder="아이디를 입력해주세요")
+    pw=st.text_input("비밀번호", type="password")
+    login = st.button("로그인")
+
+    if login:
+        if db_id == id and db_pw == pw:
+            st.success("로그인 성공")
+            st.balloons()
+        else:
+            st.error("로그인 실패")
+            st.snow()
+            
+
+elif 메뉴 == "회원가입":
+    st.title("🏀회원가입")
+    
+elif 메뉴 == "비밀번호 찾기":
+    st.video("https://www.youtube.com/watch?v=ekr2nIex040")
